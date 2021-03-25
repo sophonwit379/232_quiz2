@@ -19,7 +19,7 @@ int main()
         num=i+1;
         for(x=1;x<j;x++)
         {
-            if(num%check[x]==0)
+            if(check[x]==num)
             {
                 if(num==n)
                     show=1;
