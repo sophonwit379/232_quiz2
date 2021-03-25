@@ -1,36 +1,36 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,j,count=0,num,multi=2,check=2,show=1,com=-1;
+    int i,n,j=0,count=0,num,multi=2,check[1000]={1},show=1,com=0;
     scanf("%d",&n);
-    for(i=0; i<n; i++)
+    for(i=0;i<n; i++)
+    {
+        num=i+1;
+        if(num*num*num<=n)
+        {
+            check[j]=num*num*num;
+        }
+        printf("%d\n",check[j]);
+        if(check[j]==0)
+            break;
+        j++;
+    }
+    j=1;
+    for(i=0;i<n; i++)
     {
         num=i+1;
         while(num>1)
         {
-            if(num%multi==0)
+            if(i%check[j]==0)
             {
-                if(check==multi)
-                    count++;
-                else
-                    count=0;
-                num/=multi;
-                check=multi;
-                if(count==3)
-                    break;
+                count++;
+                break;
             }
             else
-                multi++;
+                j++;
         }
-        if(count<2)
-        {
-            show++;
-        }
-        multi=2;
-        check=2;
-        count=0;
     }
-    printf("\n%d",show);
+
 
 
 
