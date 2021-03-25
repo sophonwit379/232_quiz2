@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,j,count,num,multi=2;
+    int i,n,j,count=0,num,multi=2,check=2;
     scanf("%d",&n);
     for(i=0;i<n;i++)
     {
@@ -10,13 +10,16 @@ int main()
         {
             if(num%2==0)
             {
-                tmp=num%0;
-
+                num/=2;
+                if(check==multi)
+                    count++;
             }
             else
                 multi++;
+            check=multi;
         }
         multi=2;
+        count=0;
     }
 
 
