@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,j=0,count=0,num,check[1000]={1},x,res;
+    int i,n,j=0,count=0,num,check[100]={1},x,show=0,res;
     scanf("%d",&n);
     for(i=0; i<n; i++)
     {
@@ -21,14 +21,15 @@ int main()
         {
             if(num%check[x]==0)
             {
+                if(num==n)
+                    show=1;
                 count++;
-                break;
             }
         }
     }
     res=n-count;
-    printf("%d\n",res);
-
-
-
+    if(show==1)
+        printf("Not Cube Free");
+    else
+        printf("%d",res);
 }
